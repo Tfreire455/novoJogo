@@ -1,13 +1,11 @@
-let espacoCanvas = document.getElementById('meu-canvas');
-let context = espacoCanvas.getContext('2d');
 //Preenchimento do fundo
-// context.fillStyle = 'red';
-// context.fillRect(50, 50, 100, 100);
+context.fillStyle = 'red';
+context.fillRect(50, 50, 100, 100);
 
-//Contorno azul com expessura de 3px
-// context.lineWidth = 3;
-// context.strokeStyle = 'blue';
-// context.strokeRect(50, 50, 100, 100)
+// Contorno azul com expessura de 3px
+context.lineWidth = 3;
+context.strokeStyle = 'blue';
+context.strokeRect(50, 50, 100, 100)
 
 //Iniciar novo Path (apagando desenhos anteriores)
 context.beginPath();
@@ -51,3 +49,4 @@ context.arc(
 )
 context.fill();
 context.stroke();
+context.beginPath();
