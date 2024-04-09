@@ -26,3 +26,28 @@ context.lineWidth = 3;
 
 //Traçar as linhas do caminho
 context.stroke()
+
+
+context.beginPath();
+//Arco
+context.arc(
+    250,
+    50,
+    40,
+    0,
+    2 * Math.PI
+)
+context.fill();
+context.stroke();
+
+context.beginPath();
+//Meio arco
+context.arc(
+    55,
+    50,
+    40,
+    0,
+    1 * Math.PI
+)
+context.fill();
+context.stroke();
