@@ -1,8 +1,9 @@
 // Seleção de elementos
 const html = document.querySelector('html');
+const body = document.querySelector('body');
 const btnMenu = document.querySelector('.btn-menu');
 const menu = document.querySelector('.menu');
-const formas = document.querySelector('.btn-formas');
+const forma = document.querySelector('.btn-formas');
 
 // Definição de itens do menu
 const itens = [
@@ -16,19 +17,44 @@ const itens = [
 
 // Função para criar os itens do menu
 function criarItensMenu() {
-
+    itens.forEach(item => {
+        forma.innerHTML += `<li><input class="${item.class}" type="button" value="${item.label}"></li>`;
+    })
 }
+criarItensMenu();
+const circle = html.querySelector('.circle')
+const square = html.querySelector('.square')
+const triangle = html.querySelector('.triangle')
+const rectangle = html.querySelector('.rectangle')
+const trapeze = html.querySelector('.trapeze')
+const diamond = html.querySelector('.diamond')
 
-// Função para lidar com cliques nos botões do menu
-function adicionarEventosMenu() {}
+circle.addEventListener('click', () => {
 
-// Adiciona eventos aos botões do menu
-adicionarEventosMenu();
+})
+square.addEventListener('click', () => {
+
+})
+triangle.addEventListener('click', () => {
+
+})
+rectangle.addEventListener('click', () => {
+
+})
+trapeze.addEventListener('click', () => {
+
+})
+diamond.addEventListener('click', () => {
+
+})
+
+
 
 // Adiciona evento ao botão do menu para mostrar/ocultar o menu
 btnMenu.addEventListener('click', () => {
     menu.classList.toggle('hidden');
-});
+})
+
+btnMenu.addEventListener('click', () => {});
 
 // Cria os itens do menu quando o script é carregado
-criarItensMenu();

@@ -4,33 +4,14 @@
     box-sizing: border-box;
 }
 
-[contexto="circle"] {
-    background-image: url('./270px_Prancheta.png');
-    background-size: 100%;
-    transition: 1s;
-}
-
-[contexto="square"] {
-    transition: 1s;
-    background-image: url('./Sem\ título-1_Prancheta\ 1.png');
+.bg {
+    background-image: url('./09.png');
     background-size: 100%;
 }
 
-[contexto="triangle"] {
-    background-image: url('./triangulo_Prancheta\ 1.png');
-    background-size: 100%;
-    transition: 1s;
-}
-
-[contexto="rectangle"] {
-    background-image: url('./retangulo_Prancheta\ 1.png');
-    background-size: 100%;
-    transition: 1s;
-}
-
-[contexto="circle"] {
-    background-image: url('./270px_Prancheta.png');
-    transition: 1s;
+.blur {
+    filter: blur(20px);
+    filter: brightness(2px);
 }
 
 .btn-div {
@@ -46,6 +27,7 @@
     width: 80%;
     padding: 10px 20px;
     color: white;
+    transition: 1s ease-in;
 }
 
 .btn-menu:hover {
@@ -55,27 +37,39 @@
 
 .hidden {
     display: none;
+    transition: 2s;
 }
 
 .menu {
     list-style: none;
     padding: 0;
     margin: 0;
+    text-align: center;
 }
 
 .menu li {
     overflow: hidden;
-    transition: max-height 0.3s ease-out;
-    /* Transição suave da altura */
     max-height: 0;
+    transition: max-height 0.3s ease-out;
 }
 
 .menu li input {
-    width: 100%;
+    width: 80%;
     padding: 10px;
     border: none;
     background-color: #f0f0f0;
     cursor: pointer;
+    transition: 1s;
+    margin: 5px 0;
+    border-radius: 8px;
+    border: 1px solid grey;
+}
+
+.menu li input:hover {
+    -webkit-box-shadow: 0px 7px 37px 0px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0px 7px 37px 0px rgba(0, 0, 0, 1);
+    box-shadow: 0px 7px 37px 0px rgba(0, 0, 0, 1);
+    transition: 1s ease-in-out;
 }
 
 
@@ -83,5 +77,19 @@
 
 .menu li:not(.hidden) {
     max-height: 100px;
-    /* Altura máxima para a animação */
+    animation: expandir 2s forwards;
+}
+
+
+/* Altura máxima para a animação */
+
+@keyframes expandir {
+    from {
+        max-height: 0;
+        transition: 2s ease-in-out;
+    }
+    to {
+        max-height: 100px;
+        transition: 2s ease-in-out;
+    }
 }
