@@ -1,3 +1,5 @@
+// module.export = { FormaGeometrica };
+
 class FormaGeometrica {
     constructor() {}
 

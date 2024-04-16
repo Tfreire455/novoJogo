@@ -1,3 +1,4 @@
+// import { FormaGeometrica } from './fundamentoPOO.js';
 // Seleção de elementos
 const html = document.querySelector('html');
 const body = document.querySelector('body');
@@ -33,6 +34,7 @@ circle.addEventListener('click', () => {
 
 })
 square.addEventListener('click', () => {
+    FormaGeometrica.quadrado(298)
 
 })
 triangle.addEventListener('click', () => {
@@ -53,8 +55,7 @@ diamond.addEventListener('click', () => {
 // Adiciona evento ao botão do menu para mostrar/ocultar o menu
 btnMenu.addEventListener('click', () => {
     menu.classList.toggle('hidden');
+    body.classList.toggle('blur');
 })
-
-btnMenu.addEventListener('click', () => {});
 
 // Cria os itens do menu quando o script é carregado

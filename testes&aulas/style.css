@@ -5,19 +5,58 @@
 }
 
 .bg {
-    background-image: url('./09.png');
+    background-image: url('./09blur.png');
     background-size: 100%;
+    transition: 1s;
+}
+
+.input-resultado {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    text-align: center;
+    margin: 8px;
+    gap: 10px;
+}
+
+.calc-quadrado {
+    grid-row: 1;
+    grid-column: 1 / span 2;
+    justify-self: center;
+}
+
+label.number {
+    grid-row: 2;
+}
+
+#number {
+    grid-row: 2;
+    grid-column: 2;
+}
+
+.titulo {
+    font-family: Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(57, 0, 57);
+    -webkit-box-shadow: 0px 7px 37px 0px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0px 7px 37px 0px rgba(0, 0, 0, 1);
+    box-shadow: 0px 7px 37px 0px rgba(0, 0, 0, 1);
+    font-size: 1.5rem;
+    color: #f0f0f0;
 }
 
 .blur {
-    filter: blur(20px);
-    filter: brightness(2px);
+    background-image: url('./09.png');
+    background-size: 100%;
+    transition: 1s;
 }
 
 .btn-div {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin: 50px 0;
 }
 
 .btn-menu {
@@ -28,6 +67,7 @@
     padding: 10px 20px;
     color: white;
     transition: 1s ease-in;
+    border-radius: 8px;
 }
 
 .btn-menu:hover {
