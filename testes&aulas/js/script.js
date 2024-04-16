@@ -1,10 +1,10 @@
-// import { FormaGeometrica } from './fundamentoPOO.js';
 // Seleção de elementos
 const html = document.querySelector('html');
 const body = document.querySelector('body');
 const btnMenu = document.querySelector('.btn-menu');
 const menu = document.querySelector('.menu');
 const forma = document.querySelector('.btn-formas');
+const span = document.querySelector('.span-contexto');
 
 // Definição de itens do menu
 const itens = [
@@ -34,7 +34,13 @@ circle.addEventListener('click', () => {
 
 })
 square.addEventListener('click', () => {
-    FormaGeometrica.quadrado(298)
+    span.innerHTML = `
+    <div class="input-resultado">
+        <h5 class="calc-quadrado">Quadrado</h5>
+        <label for="number-side" class="number-side">Lado: </label>
+        <input type="number" name="number" id="number-side">
+    </div>`
+    const squareSideInput = document.querySelector('#number-side')
 
 })
 triangle.addEventListener('click', () => {

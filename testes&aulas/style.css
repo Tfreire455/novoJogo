@@ -12,26 +12,83 @@
 
 .input-resultado {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
     align-items: center;
     text-align: center;
-    margin: 8px;
-    gap: 10px;
+    margin: 15px 38px;
+    gap: 10px 0;
+    align-self: center;
 }
 
 .calc-quadrado {
     grid-row: 1;
     grid-column: 1 / span 2;
     justify-self: center;
+    align-items: center;
+    text-align: center;
 }
 
-label.number {
+label.number-side {
+    text-align: center;
     grid-row: 2;
+    padding: 8px 20px;
+    background-color: rgb(57, 0, 57);
+    text-transform: uppercase;
+    font-family: Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+    color: #f0f0f0;
+    border-radius: 10px 0 0 10px;
 }
 
-#number {
+#number-side {
+    background: none;
+    padding: 6.8px;
     grid-row: 2;
     grid-column: 2;
+    background: rgba( 255, 255, 255, 0.35);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
+    backdrop-filter: blur( 13.5px);
+    -webkit-backdrop-filter: blur( 13.5px);
+    border-radius: 0px 10px 10px 0;
+    border: 1px solid rgba( 255, 255, 255, 0.18);
+    font-family: Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: black;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.result-calc {
+    margin: 50px 60px;
+    height: 150px;
+    min-height: 20%;
+    max-height: max-content;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-family: Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+    color: #f0f0f0;
+    background-color: rgb(163, 163, 163);
+    text-transform: uppercase;
+    border-radius: 0 0 10px 10px;
+    -webkit-box-shadow: 0px 7px 37px 0px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0px 7px 37px 0px rgba(0, 0, 0, 1);
+    box-shadow: 0px 7px 37px 0px rgba(0, 0, 0, 1);
+    animation: expandir 3s;
+}
+
+.result {
+    display: flex;
+    height: 20%;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    font-family: Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+    color: #f0f0f0;
+    background-color: rgb(57, 0, 57);
+    text-transform: uppercase;
 }
 
 .titulo {
@@ -116,7 +173,7 @@ label.number {
 /* Mostra o conteúdo quando o item está expandido */
 
 .menu li:not(.hidden) {
-    max-height: 100px;
+    max-height: 100%;
     animation: expandir 2s forwards;
 }
 
