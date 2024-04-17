@@ -97,23 +97,34 @@ circle.addEventListener('click', () => {
     span.innerHTML = `
     <div class="input-resultado">
         <h5 class="calc">Círculo</h5>
-        <label for="number-radius" class="number-radius">Raio: </label>
-        <input type="number" name="number" id="number-radius">
-        </div>`
+        <div class = "circle">
+            <div class="radius">
+            <label for="number-side" class="number-side">Raio: </label>
+            <input type="number" name="number" id="number-side">
+            </div>
+        </div>
+    </div>`
 
     ResetWindow()
 })
 
 square.addEventListener('click', function() {
     span.innerHTML = `
-        <div class="input-resultado">
-        <h5 class="calc">Quadrado</h5>
-        <label for="number-side" class="number-side">Lado: </label>
-        <input type="number" name="number" id="number-side">
-        </div>`
+    <div class="input-resultado">
+    <h5 class="calc">Quadrado</h5>
+    <div class = "square">
+        <div class="">
+            <div class="side">
+            <label for="number-side" class="number-side">Lado: </label>
+            <input type="number" name="number" id="number-side">
+            </div>
+        </div>
+    </div>
+</div>`
 
     ResetWindow()
 })
+
 triangle.addEventListener('click', () => {
     span.innerHTML = `
     <div class="input-resultado">
@@ -134,6 +145,7 @@ triangle.addEventListener('click', () => {
 
     ResetWindow()
 })
+
 rectangle.addEventListener('click', () => {
 
 })
