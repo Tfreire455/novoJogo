@@ -5,6 +5,69 @@ const btnMenu = document.querySelector('.btn-menu');
 const menu = document.querySelector('.menu');
 const forma = document.querySelector('.btn-formas');
 const span = document.querySelector('.span-contexto');
+const resultadoBtn = document.querySelector('.result');
+const resultWindow = document.querySelector('.result-calc')
+
+
+
+class FormaGeometrica {
+    constructor() {}
+
+    static circulo() {
+        function Value() {
+            resultadoBtn.addEventListener('click', () => {
+                let circleInput = document.getElementById('number-radius')
+                let radius = circleInput.value;
+                console.log(radius)
+                Calc(radius);
+            })
+        }
+        Value()
+
+        function Calc(raio) {
+            const area = Math.PI * raio ** 2;
+            resultWindow.innerHTML = `${area.toFixed(2)}`;
+            console.log(area.toFixed(2))
+        }
+    }
+
+    static quadrado() {
+        function Value() {
+            resultadoBtn.addEventListener('click', () => {
+                let squareInput = document.getElementById('number-side')
+                let side = squareInput.value;
+                console.log(side)
+                Calc(side);
+            })
+        }
+        Value()
+
+        function Calc(lado) {
+            const area = lado ** 2;
+            console.log(`Quadrado: Lado = ${lado}, Área = ${area}`);
+            resultWindow.innerHTML = `${area}`;
+            console.log(area)
+        }
+    }
+
+    // area = base * altura / 2 
+    static triangulo() {
+        function Value() {
+            resultadoBtn.addEventListener('click', () => {
+                let triangleInputBase = document.getElementById('number-base')
+                let triangleInputHeight = document.getElementById('number-height')
+                let base = triangleInputBase.value;
+                let height = triangleInputHeight.value;
+                console.log(base, height)
+                Calc(side);
+            })
+
+        }
+    }
+
+
+}
+
 
 // Definição de itens do menu
 const itens = [
@@ -31,20 +94,45 @@ const trapeze = html.querySelector('.trapeze')
 const diamond = html.querySelector('.diamond')
 
 circle.addEventListener('click', () => {
-
-})
-square.addEventListener('click', () => {
     span.innerHTML = `
     <div class="input-resultado">
-        <h5 class="calc-quadrado">Quadrado</h5>
+        <h5 class="calc">Círculo</h5>
+        <label for="number-radius" class="number-radius">Raio: </label>
+        <input type="number" name="number" id="number-radius">
+        </div>`
+
+    ResetWindow()
+})
+
+square.addEventListener('click', function() {
+    span.innerHTML = `
+        <div class="input-resultado">
+        <h5 class="calc">Quadrado</h5>
         <label for="number-side" class="number-side">Lado: </label>
         <input type="number" name="number" id="number-side">
-    </div>`
-    const squareSideInput = document.querySelector('#number-side')
+        </div>`
 
+    ResetWindow()
 })
 triangle.addEventListener('click', () => {
+    span.innerHTML = `
+    <div class="input-resultado">
+        <h5 class="calc">Triângulo</h5>
+        <div class = "triangle-bh">
+            <div class="bh">
+                <div class="base">
+                <label for="number-base" class="number-base">Base: </label>
+                <input type="number" name="number" id="number-base">
+                </div>
+                <div class="height">    
+                <label for="number-height" class="number-height">Altura: </label>
+                <input type="number" name="number" id="number-height">
+                </div>
+            </div>
+        </div>
+    </div>`
 
+    ResetWindow()
 })
 rectangle.addEventListener('click', () => {
 
@@ -56,12 +144,23 @@ diamond.addEventListener('click', () => {
 
 })
 
+resultadoBtn.addEventListener('click', () => {
+    resultWindow.classList.toggle('hidden')
 
+})
 
 // Adiciona evento ao botão do menu para mostrar/ocultar o menu
 btnMenu.addEventListener('click', () => {
     menu.classList.toggle('hidden');
     body.classList.toggle('blur');
+    span.classList.add('hidden');
 })
 
 // Cria os itens do menu quando o script é carregado
+
+function ResetWindow() {
+    resultWindow.classList.add('hidden')
+}
+
+FormaGeometrica.quadrado()
+FormaGeometrica.circulo()
