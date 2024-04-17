@@ -59,9 +59,15 @@ class FormaGeometrica {
                 let base = triangleInputBase.value;
                 let height = triangleInputHeight.value;
                 console.log(base, height)
-                Calc(side);
+                Calc(base, height);
             })
+        }
+        Value()
 
+        function Calc(base, altura) {
+            const area = (base * altura) / 2;
+            console.log(`Área do triângulo = ${area}`);
+            resultWindow.innerHTML = `Área do Triângulo: ${area}`;
         }
     }
 
@@ -149,9 +155,11 @@ triangle.addEventListener('click', function() {
 rectangle.addEventListener('click', function() {
 
 })
+
 trapeze.addEventListener('click', function() {
 
 })
+
 diamond.addEventListener('click', function() {
 
 })
@@ -165,14 +173,15 @@ resultadoBtn.addEventListener('click', () => {
 btnMenu.addEventListener('click', () => {
     menu.classList.toggle('hidden');
     body.classList.toggle('blur');
-    span.classList.add('hidden');
+    span.classList.toggle('hidden');
 })
 
 // Cria os itens do menu quando o script é carregado
 
 function ResetWindow() {
-    resultWindow.classList.add('hidden')
+    resultWindow.classList.add('hidden');
 }
 
 FormaGeometrica.quadrado()
 FormaGeometrica.circulo()
+FormaGeometrica.triangulo()
