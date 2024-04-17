@@ -93,7 +93,7 @@ const rectangle = html.querySelector('.rectangle')
 const trapeze = html.querySelector('.trapeze')
 const diamond = html.querySelector('.diamond')
 
-circle.addEventListener('click', () => {
+circle.addEventListener('click', function() {
     span.innerHTML = `
     <div class="input-resultado">
         <h5 class="calc">Círculo</h5>
@@ -125,7 +125,7 @@ square.addEventListener('click', function() {
     ResetWindow()
 })
 
-triangle.addEventListener('click', () => {
+triangle.addEventListener('click', function() {
     span.innerHTML = `
     <div class="input-resultado">
         <h5 class="calc">Triângulo</h5>
@@ -146,13 +146,13 @@ triangle.addEventListener('click', () => {
     ResetWindow()
 })
 
-rectangle.addEventListener('click', () => {
+rectangle.addEventListener('click', function() {
 
 })
-trapeze.addEventListener('click', () => {
+trapeze.addEventListener('click', function() {
 
 })
-diamond.addEventListener('click', () => {
+diamond.addEventListener('click', function() {
 
 })
 
