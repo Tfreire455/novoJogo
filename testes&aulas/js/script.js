@@ -6,7 +6,9 @@ const menu = document.querySelector('.menu');
 const forma = document.querySelector('.btn-formas');
 const span = document.querySelector('.span-contexto');
 const resultadoBtn = document.querySelector('.result');
-const resultWindow = document.querySelector('.result-calc')
+const resultWindow = document.querySelector('.result-calc');
+const calcular = document.querySelector('.check');
+const formula = document.querySelector('.formula');
 
 
 
@@ -16,9 +18,9 @@ class FormaGeometrica {
     static circulo() {
         function Value() {
             resultadoBtn.addEventListener('click', () => {
-                let circleInput = document.getElementById('number-radius')
+                let circleInput = document.getElementById('number-radius');
                 let radius = circleInput.value;
-                console.log(radius)
+                console.log(radius);
                 Calc(radius);
             })
         }
@@ -72,6 +74,7 @@ class FormaGeometrica {
     }
 
 
+
 }
 
 
@@ -102,15 +105,16 @@ const diamond = html.querySelector('.diamond')
 circle.addEventListener('click', function() {
     span.innerHTML = `
     <div class="input-resultado">
-        <h5 class="calc">Círculo</h5>
-        <div class = "circle">
-            <div class="radius">
-            <label for="number-side" class="number-side">Raio: </label>
-            <input type="number" name="number" id="number-side">
-            </div>
-        </div>
+    <h5 class="calc">Círculo</h5>
+    <div class = "circle">
+    <div class="radius">
+    <label for="number-radius" class="number-side">Raio: </label>
+    <input type="number" name="number" id="number-radius">
+    </div>
+    </div>
     </div>`
 
+    formula.innerHTML = `Fórmula da área do Círculo: Área = PI * Raio²`
     ResetWindow()
 })
 
@@ -119,36 +123,38 @@ square.addEventListener('click', function() {
     <div class="input-resultado">
     <h5 class="calc">Quadrado</h5>
     <div class = "square">
-        <div class="">
-            <div class="side">
-            <label for="number-side" class="number-side">Lado: </label>
-            <input type="number" name="number" id="number-side">
-            </div>
-        </div>
+    <div class="">
+    <div class="side">
+    <label for="number-side" class="number-side">Lado: </label>
+    <input type="number" name="number" id="number-side">
     </div>
-</div>`
+    </div>
+    </div>
+    </div>`
 
+    formula.innerHTML = `Fórmula da Área do quadrado: Área = Lado²`
     ResetWindow()
 })
 
 triangle.addEventListener('click', function() {
     span.innerHTML = `
-    <div class="input-resultado">
+        <div class="input-resultado">
         <h5 class="calc">Triângulo</h5>
         <div class = "triangle-bh">
-            <div class="bh">
-                <div class="base">
-                <label for="number-base" class="number-base">Base: </label>
-                <input type="number" name="number" id="number-base">
-                </div>
-                <div class="height">    
+        <div class="bh">
+        <div class="base">
+        <label for="number-base" class="number-base">Base: </label>
+        <input type="number" name="number" id="number-base">
+        </div>
+        <div class="height">    
                 <label for="number-height" class="number-height">Altura: </label>
                 <input type="number" name="number" id="number-height">
                 </div>
-            </div>
-        </div>
-    </div>`
+                </div>
+                </div>
+                </div>`
 
+    formula.innerHTML = `fórmula da Área do Triângulo: Área = (Base * Altura) / 2`
     ResetWindow()
 })
 
@@ -174,6 +180,11 @@ btnMenu.addEventListener('click', () => {
     menu.classList.toggle('hidden');
     body.classList.toggle('blur');
     span.classList.toggle('hidden');
+})
+
+calcular.addEventListener('click', () => {
+    formula.classList.toggle('hidden');
+
 })
 
 // Cria os itens do menu quando o script é carregado

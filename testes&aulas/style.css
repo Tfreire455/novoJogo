@@ -179,7 +179,8 @@ label.number-height {
     /*CSS do Input Triangulo acaba aqui*/
 }
 
-.result-calc {
+.result-calc,
+.formula {
     height: 50px;
     min-height: 20%;
     max-height: max-content;
@@ -197,11 +198,15 @@ label.number-height {
     -moz-box-shadow: 0px 7px 37px 0px rgba(0, 0, 0, 1);
     box-shadow: 0px 7px 37px 0px rgba(0, 0, 0, 1);
     animation: expandir 3s;
-    transition: 2s;
     align-items: center;
 }
 
-.result {
+.formula {
+    font-size: 0.7rem;
+}
+
+.result,
+.check {
     display: grid;
     width: 80%;
     margin: 0 10%;
@@ -214,19 +219,6 @@ label.number-height {
     border: none;
     padding: 8px;
     border-radius: 10px 10px 0 0;
-}
-
-.check {
-    display: grid;
-    width: 80%;
-    margin: 0 10%;
-    height: 100%;
-    font-family: Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 700;
-    color: #f0f0f0;
-    background-color: rgb(57, 0, 57);
-    text-transform: uppercase;
-    border-radius: 10px;
 }
 
 .span-contexto {
