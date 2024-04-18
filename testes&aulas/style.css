@@ -25,6 +25,10 @@
     grid-column: 1 / span 2;
     justify-self: center;
     text-align: center;
+    text-transform: uppercase;
+    font-family: Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+    color: #f0f0f0;
 }
 
 .radius {
@@ -98,7 +102,9 @@ label.number-side {
     /*CSS do Input Quadrado acaba aqui*/
 }
 
-.triangle-bh {
+.triangle-bh,
+.trapeze-Bbh,
+.losango-Dd {
     /* CSS do Input Triangulo começa aqui */
     /* CSS do Input Triangulo começa aqui */
     /* CSS do Input Triangulo começa aqui */
@@ -109,7 +115,9 @@ label.number-side {
     justify-content: center;
 }
 
-label.number-base {
+label.number-base,
+label.rectangle-base,
+label.rectangle-height {
     text-align: center;
     padding: 9px 6px;
     background-color: rgb(57, 0, 57);
@@ -120,7 +128,9 @@ label.number-base {
     border-radius: 10px 0 0 10px;
 }
 
-.bh {
+.bh,
+.Bbh,
+.Dd {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -130,12 +140,24 @@ label.number-base {
 }
 
 .base,
-.height {
+.height,
+.larger-base,
+.smaller-base,
+.height-trapeze,
+.diagonal-maior,
+.diagonal-menor {
     display: flex;
     scale: 0.7
 }
 
-#number-base {
+#number-base,
+#number-larger-base,
+#number-smaller-base,
+#trapeze-height,
+#rectangle-base,
+#rectangle-height,
+#smaller-diag,
+#larger-diag {
     background: none;
     padding: 6.8px;
     background: rgba( 255, 255, 255, 0.35);
@@ -150,7 +172,12 @@ label.number-base {
     font-weight: 700;
 }
 
-label.number-height {
+label.number-height,
+label.number-larger-base,
+label.number-smaller-base,
+label.trapeze-height,
+label.larger-diag,
+label.smaller-diag {
     text-align: center;
     padding: 8px 6px;
     background-color: rgb(57, 0, 57);

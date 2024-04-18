@@ -1,4 +1,3 @@
-// Seleção de elementos
 const html = document.querySelector('html');
 const body = document.querySelector('body');
 const btnMenu = document.querySelector('.btn-menu');
@@ -37,7 +36,7 @@ class FormaGeometrica {
         function Value() {
             resultadoBtn.addEventListener('click', () => {
                 let squareInput = document.getElementById('number-side')
-                let side = squareInput.value;
+                let side = parseFloat(squareInput.value);
                 console.log(side)
                 Calc(side);
             })
@@ -45,7 +44,7 @@ class FormaGeometrica {
         Value()
 
         function Calc(lado) {
-            const area = lado ** 2;
+            const area = parseFloat(lado ** 2);
             console.log(`Quadrado: Lado = ${lado}, Área = ${area}`);
             resultWindow.innerHTML = `${area}`;
             console.log(area)
@@ -58,8 +57,8 @@ class FormaGeometrica {
             resultadoBtn.addEventListener('click', () => {
                 let triangleInputBase = document.getElementById('number-base')
                 let triangleInputHeight = document.getElementById('number-height')
-                let base = triangleInputBase.value;
-                let height = triangleInputHeight.value;
+                let base = parseFloat(triangleInputBase.value);
+                let height = parseFloat(triangleInputHeight.value);
                 console.log(base, height)
                 Calc(base, height);
             })
@@ -67,14 +66,75 @@ class FormaGeometrica {
         Value()
 
         function Calc(base, altura) {
-            const area = (base * altura) / 2;
+            const area = parseFloat((base * altura) / 2);
             console.log(`Área do triângulo = ${area}`);
             resultWindow.innerHTML = `Área do Triângulo: ${area}`;
         }
     }
 
+    static retangulo() {
+        function Value() {
+            resultadoBtn.addEventListener('click', () => {
+                let rectangleInputBase = document.getElementById('rectangle-base')
+                let rectangleInputHeight = document.getElementById('rectangle-height')
+                let base = parseFloat(rectangleInputBase.value);
+                let height = parseFloat(rectangleInputHeight.value);
+                console.log(base, height);
+                Calc(base, height);
+            })
+        }
+        Value()
 
+        function Calc(base, altura) {
+            const area = parseFloat(base * altura);
+            console.log(`Área do Retângulo = ${area}`);
+            resultWindow.innerHTML = `Área do Retângulo: ${area}`;
+        }
+    }
 
+    // area = ((BASEmaior + baseMenor) * Altura) / 2
+    static trapezio() {
+        function Value() {
+            resultadoBtn.addEventListener('click', () => {
+                let largerBaseInput = document.getElementById('number-larger-base');
+                let smallerBaseInput = document.getElementById('number-smaller-base');
+                let heightTrapezeInput = document.getElementById('trapeze-height');
+                let largerBase = parseFloat(largerBaseInput.value);
+                let smallerBase = parseFloat(smallerBaseInput.value);
+                let heightTrapeze = parseFloat(heightTrapezeInput.value);
+                console.log(largerBase, smallerBase, heightTrapeze);
+                Calc(largerBase, smallerBase, heightTrapeze);
+            })
+        }
+        Value()
+
+        function Calc(baseMaior, baseMenor, alturaTrapezio) {
+            const bases = baseMaior + baseMenor;
+            const resultadoArea = (bases * alturaTrapezio) / 2
+            console.log(resultadoArea);
+            resultWindow.innerHTML = `Área do Trapézio: ${resultadoArea}`;
+        }
+    }
+
+    static losango() {
+        function Value() {
+            resultadoBtn.addEventListener('click', () => {
+                let diamondInputLargerD = document.getElementById('larger-diag')
+                let diamondInputSmallerD = document.getElementById('smaller-diag')
+                let diagMaior = parseFloat(diamondInputLargerD.value);
+                let diagMenor = parseFloat(diamondInputSmallerD.value);
+                console.log(diagMaior, diagMenor)
+                Calc(diagMaior, diagMenor);
+            })
+        }
+        Value()
+
+        function Calc(diagMaior, diagMenor) {
+            const area = parseFloat((diagMaior * diagMenor) / 2);
+            console.log(`Área do losango = ${area}`);
+            resultWindow.innerHTML = `Área do Losango: ${area}`;
+        }
+    }
 }
 
 
@@ -139,34 +199,93 @@ square.addEventListener('click', function() {
 triangle.addEventListener('click', function() {
     span.innerHTML = `
         <div class="input-resultado">
-        <h5 class="calc">Triângulo</h5>
-        <div class = "triangle-bh">
-        <div class="bh">
-        <div class="base">
-        <label for="number-base" class="number-base">Base: </label>
-        <input type="number" name="number" id="number-base">
-        </div>
-        <div class="height">    
-                <label for="number-height" class="number-height">Altura: </label>
-                <input type="number" name="number" id="number-height">
+            <h5 class="calc">Triângulo</h5>
+            <div class = "triangle-bh">
+                <div class="bh">
+                    <div class="base">
+                        <label for="number-base" class="number-base">Base: </label>
+                        <input type="number" name="number" id="number-base">
+                    </div>
+                    <div class="height">    
+                        <label for="number-height" class="number-height">Altura: </label>
+                        <input type="number" name="number" id="number-height">
+                    </div>
                 </div>
-                </div>
-                </div>
-                </div>`
+            </div>
+        </div>`
 
     formula.innerHTML = `fórmula da Área do Triângulo: Área = (Base * Altura) / 2`
     ResetWindow()
 })
 
 rectangle.addEventListener('click', function() {
+    span.innerHTML = `
+    <div class="input-resultado">
+        <h5 class="calc">Retângulo</h5>
+        <div class = "rectangle-bh">
+            <div class="bh">
+                <div class="base">
+                    <label for="rectangle-base" class="rectangle-base">Base: </label>
+                    <input type="number" name="number" id="rectangle-base">
+                </div>
+                <div class="height">    
+                    <label for="rectangle-height" class="rectangle-height">Altura: </label>
+                    <input type="number" name="number" id="rectangle-height">
+                </div>
+            </div>
+        </div>
+    </div>`
 
+    formula.innerHTML = `fórmula da Área do Retângulo: Área = Base * Altura`
+    ResetWindow()
 })
 
 trapeze.addEventListener('click', function() {
+    span.innerHTML = `
+        <div class="input-resultado">
+            <h5 class="calc">Trapézio</h5>
+            <div class = "trapeze-Bbh">
+                <div class="Bbh">
+                    <div class="larger-base">
+                        <label for="number-larger-base" class="number-larger-base">Base Maior: </label>
+                        <input type="number" name="number" id="number-larger-base">
+                    </div>
+                    <div class="smaller-base">    
+                        <label for="number-smaller-base" class="number-smaller-base">Base Menor: </label>
+                        <input type="number" name="number" id="number-smaller-base">
+                    </div>
+                    <div class="height-trapeze">    
+                        <label for="trapeze-height" class="trapeze-height">Altura: </label>
+                        <input type="number" name="number" id="trapeze-height">
+                    </div>
+                </div>
+            </div>
+        </div>`
 
+    formula.innerHTML = `fórmula da Área do Trapézio: Área = (Base M + Base m)*altura / 2`
+    ResetWindow()
 })
 
 diamond.addEventListener('click', function() {
+    span.innerHTML = `
+        <div class="input-resultado">
+            <h5 class="calc">Losango</h5>
+            <div class = "losango-Dd">
+                <div class="Dd">
+                    <div class="diagonal-maior">
+                        <label for="larger-diag" class="larger-diag">Diagonal Maior: </label>
+                        <input type="number" name="number" id="larger-diag">
+                    </div>
+                    <div class="diagonal-menor">    
+                        <label for="smaller-diag" class="smaller-diag">Diagonal menor: </label>
+                        <input type="number" name="number" id="smaller-diag">
+                    </div>
+                </div>
+            </div>
+        </div>`
+
+    formula.innerHTML = `fórmula da Área do Losango: Área = (Diagonal Maior * Diagonal Menor) / 2`
+    ResetWindow()
 
 })
 
@@ -196,3 +315,6 @@ function ResetWindow() {
 FormaGeometrica.quadrado()
 FormaGeometrica.circulo()
 FormaGeometrica.triangulo()
+FormaGeometrica.retangulo()
+FormaGeometrica.trapezio()
+FormaGeometrica.losango()
